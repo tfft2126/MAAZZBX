@@ -1,5 +1,193 @@
 {
-    "MyTask1": {},
-    "MyTask2": {},
-    "MyTask3": {}
+    "SelectSkill": {
+        "focus": true,
+        "next": [
+            "Skip",
+            "Empty",
+            "Bomb",
+            "IceNova",
+            "Tornado",
+            "Stone",
+            "ThumderNet",
+            "Wood",
+            "ThumderHit",
+            "Shoot",
+            "Thumder",
+            "Laze",
+            "WaitSelect"
+        ]
+    },
+    "Skip": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": "跳过",
+        "next": "WaitSelect"
+    },
+    "Empty": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": "点击空白",
+        "next": "WaitSelect"
+    },
+    "Bomb": {
+        "recognition": "OCR",
+        "roi": [
+            0,
+            500,
+            800,
+            400
+        ],
+        "action": "Click",
+        "expected": "榴弹",
+        "next": "WaitSelect"
+    },
+    "IceNova": {
+        "recognition": "OCR",
+        "roi": [
+            0,
+            500,
+            800,
+            400
+        ],
+        "action": "Click",
+        "expected": "冰霜",
+        "next": "WaitSelect"
+    },
+    "Tornado": {
+        "recognition": "OCR",
+        "roi": [
+            0,
+            500,
+            800,
+            400
+        ],
+        "action": "Click",
+        "expected": "龙卷风",
+        "next": "WaitSelect"
+    },
+    "ThumderNet": {
+        "recognition": "OCR",
+        "roi": [
+            0,
+            500,
+            800,
+            400
+        ],
+        "action": "Click",
+        "expected": "电磁",
+        "next": "WaitSelect"
+    },
+    "Stone": {
+        "recognition": "OCR",
+        "roi": [
+            0,
+            500,
+            800,
+            400
+        ],
+        "action": "Click",
+        "expected": "陨石",
+        "next": "WaitSelect"
+    },
+    "Wood": {
+        "recognition": "OCR",
+        "roi": [
+            0,
+            500,
+            800,
+            400
+        ],
+        "action": "Click",
+        "expected": "滚木",
+        "next": "WaitSelect"
+    },
+    "Thumder": {
+        "recognition": "OCR",
+        "roi": [
+            0,
+            500,
+            800,
+            400
+        ],
+        "action": "Click",
+        "expected": "闪电",
+        "next": "WaitSelect"
+    },
+    "Shoot": {
+        "recognition": "OCR",
+        "roi": [
+            0,
+            500,
+            800,
+            400
+        ],
+        "action": "Click",
+        "expected": "奥术",
+        "next": "WaitSelect"
+    },
+    "Laze": {
+        "recognition": "OCR",
+        "roi": [
+            0,
+            500,
+            800,
+            400
+        ],
+        "action": "Click",
+        "expected": "激光",
+        "next": "WaitSelect"
+    },
+    "ThumderHit": {
+        "recognition": "OCR",
+        "roi": [
+            0,
+            500,
+            800,
+            400
+        ],
+        "action": "Click",
+        "expected": "雷击",
+        "next": "WaitSelect"
+    },
+    "WaitSelect": {
+        "pre_wait_freezes": 2000,
+        "next": [
+            "Win",
+            "Lose",
+            "Battle",
+            "SelectSkill"
+        ]
+    },
+    "Win": {
+        "focus": true,
+        "recognition": "OCR",
+        "expected": "胜利",
+        "next": "Confirm"
+    },
+    "Lose": {
+        "focus": true,
+        "recognition": "OCR",
+        "expected": "失败",
+        "next": "Confirm"
+    },
+    "Confirm": {
+        "pre_delay": 10000,
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click",
+        "next": "WaitMain"
+    },
+    "WaitMain": {
+        "pre_wait_freezes": 2000,
+        "next": "Battle"
+    },
+    "Battle": {
+        "recognition": "OCR",
+        "expected": "进入游戏",
+        "action": "Click",
+        "next": "WaitSelect"
+    },
+    "ZZBXAfk": {
+        "next": "WaitSelect"
+    }
 }
